@@ -1,0 +1,17 @@
+html {
+  overflow: hidden;
+}
+
+.navixy-test {
+  & .v-main {
+    height: calc(100vh - 7rem)
+  }
+
+  .selected {
+    background-color: #1976d2;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+}

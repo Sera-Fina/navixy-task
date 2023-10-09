@@ -1,0 +1,21 @@
+@keyframes rotateCancel {
+  0% {
+    background-color: #1976d2;
+    transform: rotate(45deg);
+  }
+  100% {
+    background-color: #ff5252;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateAdd {
+  0% {
+    background-color: #ff5252;
+    transform: rotate(0deg);
+  }
+  100% {
+    background-color: #1976d2;
+    transform: rotate(45deg);
+  }
+}

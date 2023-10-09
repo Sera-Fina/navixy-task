@@ -117,7 +117,7 @@ export default {
 
     addTemporaryMarker(mapsMouseEvent) {
       if (this.clickable) {
-        if (this.temporaryMapMarker) this.clearTemporaryMapMarker();
+        this.clearTemporaryMapMarker();
         const coordinates = mapsMouseEvent.latLng.toJSON();
         this.temporaryMapMarker = new window.google.maps.Marker({
           position: coordinates,
@@ -130,8 +130,10 @@ export default {
     },
 
     clearTemporaryMapMarker() {
-      this.temporaryMapMarker.setMap(null);
-      this.temporaryMapMarker = null;
+      if (this.temporaryMapMarker) {
+        this.temporaryMapMarker.setMap(null);
+        this.temporaryMapMarker = null;
+      }
     },
 
     drawAddButton() {
@@ -153,7 +155,6 @@ export default {
     addAddButtonListener(button) {
       button.addEventListener('click', () => {
         if (this.editing) {
-          this.clearTemporaryMapMarker();
           this.$store.dispatch('map/markers/setEditing', false);
         } else if (this.clickable) {
           this.setMapEditingStateOff(button);
@@ -165,6 +166,7 @@ export default {
 
     setMapEditingStateOff(button) {
       this.clickable = false;
+      this.clearTemporaryMapMarker();
       button.classList.remove('map_button__cancel');
       button.classList.add('map_button__add');
     },

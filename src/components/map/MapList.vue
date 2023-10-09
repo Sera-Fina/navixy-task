@@ -57,7 +57,6 @@ export default {
   methods: {
     async eventClickDelete(item) {
       await this.$store.dispatch('map/markers/deleteMarker', item);
-      await this.$store.dispatch('map/markers/uploadMarkers');
     },
 
     clickHandler(marker) {

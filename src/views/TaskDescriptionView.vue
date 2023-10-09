@@ -10,7 +10,6 @@
 </template>
 
 <script>
-
 import PageViewer from '../components/PageViewer.vue';
 
 export default {

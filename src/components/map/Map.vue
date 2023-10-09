@@ -110,7 +110,9 @@ export default {
     },
 
     centredMap(coordinates) {
-      this.map.setCenter(coordinates);
+      if (this.map) {
+        this.map.setCenter(coordinates);
+      }
     },
 
     addTemporaryMarker(mapsMouseEvent) {

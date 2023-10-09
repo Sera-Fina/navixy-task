@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import TaskDescriptionView from '@/views/TaskDescriptionView.vue';
+import MapView from '@/views/MapView.vue';
 
 Vue.use(VueRouter);
 
@@ -12,12 +14,12 @@ export const routes = [
   {
     path: '/task-description',
     name: 'TaskDescription',
-    component: () => import('../views/TaskDescriptionView.vue'),
+    component: TaskDescriptionView,
   },
   {
     path: '/map',
     name: 'Map',
-    component: () => import('../views/MapView.vue'),
+    component: MapView,
   },
 ];
 
